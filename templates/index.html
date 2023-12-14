@@ -9,14 +9,14 @@
 </head>
 <body>
     <h1>This is a Movie sentiment analysis app</h1>
-    <form action="{{ url_for('predict') }}" method="post">
-        <label for="review">Tell me your review about the movie</label>
-        <textarea id="review" name="review" rows="4" required></textarea>
+    <form action="{{ url_for('predict_review') }}" method="post">
+        <label for="user_review">Tell me your review about the movie</label>
+        <textarea id="user_review" name="user_review" rows="4" required></textarea>
         <button type="submit">I will predict your sentiment</button>
     </form>
     <div id="result">
-        {% if prediction %}
-            <p>Sentiment: {{ prediction }}</p>
+        {% if review_prediction %}
+            <p>Sentiment: {{ review_prediction }}</p>
         {% endif %}
     </div>
 </body>

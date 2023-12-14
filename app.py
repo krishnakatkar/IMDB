@@ -18,16 +18,16 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['POST'])
-def predict():
+@app.route('/predict_review', methods=['POST'])
+def predict_review():
     if request.method == 'POST':
-        review = request.form['review']
-        # Vectorize the input text
-        review_tfidf = tfidf_vectorizer.transform([review])
-        prediction = model.predict(review_tfidf.reshape(1, -1))[0]
-        return render_template('index.html', prediction=prediction, review=review)
+        user_review = request.form['user_review']
+        # Vectorizing the input text
+        review_tfidf = tfidf_vectorizer.transform([user_review])
+        review_prediction = model.predict(review_tfidf.reshape(1, -1))[0]
+        return render_template('index.html', review_prediction=review_prediction, user_review=user_review)
 
 if __name__ == '__main__':
-    #app.run(port=int(os.environ.get('PORT', 5000)), debug=True)
+#app.run(port=int(os.environ.get('PORT', 5000)), debug=True)
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
     #app.run(port=5000)
