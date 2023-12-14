@@ -1,4 +1,4 @@
-# Add these imports at the top of your script
+
 from flask import Flask,render_template, request, jsonify
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-# Load the trained model and TF-IDF vectorizer
+# Loading the trained model and TF-IDF vectorizer
 with open('sentiment_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
