@@ -10,13 +10,13 @@
 <body>
     <h1>This is a Movie sentiment analysis app</h1>
     <form action="{{ url_for('predict_review') }}" method="post">
-        <label for="user_review">Tell me your review about the movie</label>
+        <label for="user_review">How was the movie?</label>
         <textarea id="user_review" name="user_review" rows="4" required></textarea>
-        <button type="submit">I will predict your sentiment</button>
+        <button type="submit">Check Sentiment</button>
     </form>
     <div id="result">
         {% if review_prediction %}
-            <p>Sentiment: {{ review_prediction }}</p>
+            <p>Result Sentiment: {{ review_prediction }}</p>
         {% endif %}
     </div>
 </body>
