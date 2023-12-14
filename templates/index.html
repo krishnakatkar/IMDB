@@ -7,14 +7,14 @@
     <title>Sentiment Analysis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body style="text-align: center;">
     <h1>This is a Movie sentiment analysis app</h1>
-    <form action="{{ url_for('predict_review') }}" method="post">
-        <label for="user_review">How was the movie?</label>
-        <textarea id="user_review" name="user_review" rows="4" required></textarea>
+    <form action="{{ url_for('predict_review') }}" method="post" style="text-align: center;">
+        <label for="user_review">How was the movie?</label><br>
+        <textarea id="user_review" name="user_review" rows="4" required></textarea><br>
         <button type="submit">Check Sentiment</button>
     </form>
-    <div id="result">
+    <div id="result" style="text-align: center;">
         {% if review_prediction %}
             <p>Result Sentiment: {{ review_prediction }}</p>
         {% endif %}
